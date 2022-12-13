@@ -26,16 +26,16 @@ public class StudentController {
 	}
 	
 	@RequestMapping("/processForm")
-	public String processForm( @RequestParam("firstName")  String firstName, @RequestParam("lastName")  String lastName, Model model) {
+	public String processForm( @ModelAttribute("student") Student theStudent) {
 		
 		//log the input data 
-		System.out.println("first name is: "+firstName);
+		System.out.println("first name is: "+theStudent.getFirstName());
 		
-		System.out.println("last name is: "+lastName);
+		System.out.println("last name is: "+theStudent.getLastName());
 		
-		model.addAttribute("firstName", firstName);
+		System.out.println("country is: "+theStudent.getCountry());
+
 		
-		model.addAttribute("lastName", lastName);
 		
 		return "student-confirmation";
 		

@@ -8,7 +8,11 @@
 </head>
 <body>
 
-The Student is confirmed : ${firstName} ${lastName} 
+The Student is confirmed : ${student.firstName} ${student.lastName} 
+<br>
+Country: ${student.country}
+
+ 
 
 
 </body>
