@@ -1,9 +1,12 @@
 package com.luv2code.springdemo.mvc;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/student")
@@ -23,11 +26,16 @@ public class StudentController {
 	}
 	
 	@RequestMapping("/processForm")
-	public String processForm(@ModelAttribute("student")  Student theStudent) {
+	public String processForm( @RequestParam("firstName")  String firstName, @RequestParam("lastName")  String lastName, Model model) {
 		
 		//log the input data 
-		System.out.println("theStudent: "+ theStudent.getFirstName() +" "+theStudent.getLastName());
+		System.out.println("first name is: "+firstName);
 		
+		System.out.println("last name is: "+lastName);
+		
+		model.addAttribute("firstName", firstName);
+		
+		model.addAttribute("lastName", lastName);
 		
 		return "student-confirmation";
 		
