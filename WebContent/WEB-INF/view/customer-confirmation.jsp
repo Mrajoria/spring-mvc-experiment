@@ -11,5 +11,13 @@
 </head>
 <body>
 	Name of Customer is : ${customer.firstName}  ${customer.lastName}
+	
+	<br>
+	
+	Free Passes : ${customer.freePasses}
+	
+	<br>
+	Postal code : ${customer.postalCode}
+	
 </body>
 </html>
